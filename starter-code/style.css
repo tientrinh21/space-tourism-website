@@ -96,7 +96,7 @@ body {
 
 /* make images easier to work with */
 img,
-picture {
+picutre {
 	max-width: 100%;
 	display: block;
 }
@@ -166,7 +166,7 @@ select {
 	.grid-container {
 		text-align: left;
 		column-gap: var(--container-gap, 2rem);
-		grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(2rem, 1fr);
+		grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(1rem, 1fr);
 	}
 
 	.grid-container > *:first-child {
@@ -356,7 +356,7 @@ select {
 	display: none;
 }
 
-@media (max-width: 35em) {
+@media (max-width: 35rem) {
 	.primary-navigation {
 		--underline-gap: 0.5rem;
 		position: fixed;
@@ -455,25 +455,23 @@ select {
 /* ----------------------------- */
 /* Page specific background      */
 /* ----------------------------- */
-
 body {
 	background-size: cover;
 	background-position: bottom center;
 }
-
 /* home */
 .home {
 	background-image: url(./assets/home/background-home-mobile.jpg);
 }
 
-@media (min-width: 35em) {
+@media (min-width: 35rem) {
 	.home {
 		background-position: center center;
 		background-image: url(./assets/home/background-home-tablet.jpg);
 	}
 }
 
-@media (min-width: 45em) {
+@media (min-width: 45rem) {
 	.home {
 		background-image: url(./assets/home/background-home-desktop.jpg);
 	}
