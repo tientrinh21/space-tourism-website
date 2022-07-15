@@ -15,7 +15,8 @@
 
 		<link rel="stylesheet" href="style.css" />
 		<title>Frontend Mentor | Space tourism website</title>
-		<script src="script.js" defer></script>
+		<script src="navigation.js" defer></script>
+		<script src="tabs.js" defer></script>
 	</head>
 	<body class="crew">
 		<a class="skip-to-content" href="#main">Skip to content</a>
@@ -59,14 +60,47 @@
 		<main id="main" class="grid-container grid-container--crew flow">
 			<h1 class="numbered-title"><span aria-hidden="true">02</span> Meet your crew</h1>
 
-			<div class="dot-indicators flex">
-				<button aria-selected="true"><span class="sr-only">The commander</span></button>
-				<button aria-selected="false"><span class="sr-only">The mission specialist</span></button>
-				<button aria-selected="false"><span class="sr-only">The pilot</span></button>
-				<button aria-selected="false"><span class="sr-only">The crew engineer</span></button>
+			<div class="dot-indicators flex" role="tablist" aria-label="crew list">
+				<button
+					aria-selected="true"
+					aria-controls="commander-tab"
+					data-image="commander-image"
+					role="tab"
+					tabindex="0"
+				>
+					<span class="sr-only">The commander</span>
+				</button>
+				<button
+					aria-selected="false"
+					aria-controls="mission-specialist-tab"
+					data-image="mission-specialist-image"
+					role="tab"
+					tabindex="-1"
+				>
+					<span class="sr-only">The mission specialist</span>
+				</button>
+				<button
+					aria-selected="false"
+					aria-controls="pilot-tab"
+					data-image="pilot-image"
+					role="tab"
+					tabindex="-1"
+				>
+					<span class="sr-only">The pilot</span>
+				</button>
+				<button
+					aria-selected="false"
+					aria-controls="flight-engineer-tab"
+					data-image="flight-engineer-image"
+					role="tab"
+					tabindex="-1"
+				>
+					<span class="sr-only">The flight engineer</span>
+				</button>
 			</div>
 
-			<article class="crew-details flow">
+			<!-- Commander -->
+			<article class="crew-details flow" id="commander-tab" role="tabpanel" tabindex="0">
 				<header class="flow flow--space-small">
 					<h2 class="ff-serif fs-600 uppercase">Commander</h2>
 					<p class="ff-serif fs-700 uppercase">Douglas Hurley</p>
@@ -77,9 +111,72 @@
 				</p>
 			</article>
 
-			<picture>
+			<!-- Mission Specialist -->
+			<article
+				class="crew-details flow"
+				id="mission-specialist-tab"
+				role="tabpanel"
+				tabindex="0"
+				hidden
+			>
+				<header class="flow flow--space-small">
+					<h2 class="ff-serif fs-600 uppercase">Mission Specialist</h2>
+					<p class="ff-serif fs-700 uppercase">Mark Shuttleworth</p>
+				</header>
+				<p>
+					Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the
+					Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel
+					to space as a space tourist.
+				</p>
+			</article>
+
+			<!-- Pilot -->
+			<article class="crew-details flow" id="pilot-tab" role="tabpanel" tabindex="0" hidden>
+				<header class="flow flow--space-small">
+					<h2 class="ff-serif fs-600 uppercase">Pilot</h2>
+					<p class="ff-serif fs-700 uppercase">Victor Glover</p>
+				</header>
+				<p>
+					Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space
+					Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew
+					member of Expedition 64, and served as a station systems flight engineer.
+				</p>
+			</article>
+
+			<!-- Flight Engineer -->
+			<article
+				class="crew-details flow"
+				id="flight-engineer-tab"
+				role="tabpanel"
+				tabindex="0"
+				hidden
+			>
+				<header class="flow flow--space-small">
+					<h2 class="ff-serif fs-600 uppercase">Flight Engineer</h2>
+					<p class="ff-serif fs-700 uppercase">Anousheh Ansari</p>
+				</header>
+				<p>
+					Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari
+					was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS,
+					and the first Iranian in space.
+				</p>
+			</article>
+
+			<picture id="commander-image">
 				<source srcset="./assets/crew/image-douglas-hurley.webp" type="image/webp" />
 				<img src="./assets/crew/image-douglas-hurley.png" alt="Douglas Hurley" />
+			</picture>
+			<picture id="mission-specialist-image" hidden>
+				<source srcset="./assets/crew/image-mark-shuttleworth.webp" type="image/webp" />
+				<img src="./assets/crew/image-mark-shuttleworth.png" alt="Mark Shuttleworth" />
+			</picture>
+			<picture id="pilot-image" hidden>
+				<source srcset="./assets/crew/image-victor-glover.webp" type="image/webp" />
+				<img src="./assets/crew/image-victor-glover.png" alt="Victor Glover" />
+			</picture>
+			<picture id="flight-engineer-image" hidden>
+				<source srcset="./assets/crew/image-anousheh-ansari.webp" type="image/webp" />
+				<img src="./assets/crew/image-anousheh-ansari.png" alt="Anousheh Ansari" />
 			</picture>
 		</main>
 	</body>

@@ -97,8 +97,7 @@ body {
 }
 
 /* make images easier to work with */
-img,
-picutre {
+img {
 	max-width: 100%;
 	display: block;
 }
@@ -632,6 +631,10 @@ body {
 			'tabs'
 			'image';
 	}
+
+	.grid-container--crew > picture {
+		align-self: end;
+	}
 }
 
 @media (min-width: 45em) {
@@ -673,18 +676,15 @@ body {
 	}
 
 	.grid-container--crew {
+		grid-template-columns: minmax(1rem, 1fr) minmax(0, 37rem) minmax(0, 23rem) minmax(1rem, 1fr);
+		justify-items: start;
 		grid-template-areas:
 			'. title tile .'
 			'. content image .'
 			'. tabs image .';
 	}
 
-	.grid-container--crew > .dot-indicators {
-		justify-self: start;
-	}
-
 	.grid-container--crew > picture {
-		max-width: 90%;
-		align-self: end;
+		max-width: 100%;
 	}
 }
