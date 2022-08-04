@@ -45,7 +45,7 @@ Users should be able to:
 
 ## Continued development
 
-[x] Remodified using React & Next.js
+- [] Remodified using React & Next.js
 
 ## Author
 
